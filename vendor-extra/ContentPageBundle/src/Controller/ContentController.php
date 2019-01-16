@@ -106,6 +106,40 @@ final class ContentController
                                             [
                                                 'content' => ['attributes' => [], 'text' => 'Orange'],
                                             ],
+                                            [
+                                                'content' => ['attributes' => [], 'text' => 'Yellow'],
+                                            ],
+                                            [
+                                                'content' => ['attributes' => ['href' => '#'], 'text' => 'Green'],
+                                            ],
+                                            [
+                                                'content' => ['attributes' => ['href' => '#'], 'text' => 'Blue'],
+                                            ],
+                                            [
+                                                'content' => ['attributes' => [], 'text' => 'Indigo'],
+                                            ],
+                                            [
+                                                'content' => ['attributes' => [], 'text' => 'Violet'],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                [
+                                    'title' => ['text' => 'Points of the compass'],
+                                    'list' => [
+                                        'items' => [
+                                            [
+                                                'content' => ['attributes' => ['href' => '#'], 'text' => 'North'],
+                                            ],
+                                            [
+                                                'content' => ['attributes' => ['href' => '#'], 'text' => 'East'],
+                                            ],
+                                            [
+                                                'content' => ['attributes' => [], 'text' => 'South'],
+                                            ],
+                                            [
+                                                'content' => ['attributes' => [], 'text' => 'West'],
+                                            ],
                                         ],
                                     ],
                                 ],
