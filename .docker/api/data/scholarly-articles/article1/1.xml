@@ -7,6 +7,11 @@
         <id>article1</id>
         <title>Article 1</title>
 
+        <categories>
+            <category>Cell Biology</category>
+            <category>Epidemiology and Global Health</category>
+        </categories>
+
     </front>
 
 </item>

@@ -79,17 +79,16 @@ final class ContentController
                                 'text' => $title,
                             ],
                             'categories' => [
-                                'items' => [
-                                    [
-                                        'content' => ['attributes' => ['href' => '#'], 'text' => 'Cell Biology'],
-                                    ],
-                                    [
-                                      'content' => ['attributes' => ['href' => '#'], 'text' => 'Epidemiology and Global Health'],
-                                    ],
-                                ],
+                                'items' => [],
                             ],
                         ],
                     ];
+
+                    foreach ($front('libero:categories/libero:category') as $category) {
+                        $contentHeader['arguments']['categories']['items'][] = [
+                            'content' => ['attributes' => [], 'text' => (string) $category],
+                        ];
+                    }
 
                     $itemTags = [
                         'template' => '@LiberoPatterns/item-tags.html.twig',
