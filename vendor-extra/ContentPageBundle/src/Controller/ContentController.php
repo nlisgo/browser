@@ -78,6 +78,16 @@ final class ContentController
                             'contentTitle' => [
                                 'text' => $title,
                             ],
+                            'categories' => [
+                                'items' => [
+                                    [
+                                        'content' => ['attributes' => ['href' => '#'], 'text' => 'Cell Biology'],
+                                    ],
+                                    [
+                                      'content' => ['attributes' => ['href' => '#'], 'text' => 'Epidemiology and Global Health'],
+                                    ],
+                                ],
+                            ],
                         ],
                     ];
 

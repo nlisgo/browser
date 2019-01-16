@@ -1,0 +1,25 @@
+{%- set attributes = attributes|default({})|merge({class: attributes.class|default([])|merge(['item-tag-group']) }) -%}
+
+{%- block group -%}
+
+    <section {%- include('@LiberoPatterns/attributes.html.twig') -%}>
+
+        {%- block section -%}
+            {%- with title only -%}
+                {%- block title -%}
+
+                    {%- set attributes = attributes|default({})|merge({class: attributes.class|default([])|merge(['item-tag-group__title']) }) -%}
+                    {%- include '@LiberoPatterns/heading.html.twig' with {level: 4} -%}
+
+                {%- endblock title -%}
+            {%- endwith -%}
+
+            {%- with list only -%}
+                {%- include('@LiberoPatterns/item-tag-list.html.twig') -%}
+            {%- endwith -%}
+
+        {%- endblock section -%}
+
+    </section>
+
+{%- endblock group -%}
