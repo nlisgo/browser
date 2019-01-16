@@ -91,11 +91,35 @@ final class ContentController
                         ],
                     ];
 
+                    $itemTags = [
+                        'template' => '@LiberoPatterns/item-tags.html.twig',
+                        'arguments' => [
+                            'attributes' => [],
+                            'groups' => [
+                                [
+                                    'title' => ['text' => 'Colours of the rainbow'],
+                                    'list' => [
+                                        'items' => [
+                                            [
+                                                'content' => ['attributes' => ['href' => '#'], 'text' => 'Red'],
+                                            ],
+                                            [
+                                                'content' => ['attributes' => [], 'text' => 'Orange'],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ];
+
                     if ($context['lang'] !== $frontLang = $front->getAttribute('xml:lang')) {
                         $contentHeader['arguments']['attributes']['lang'] = $frontLang;
+                        $itemTags['arguments']['attributes']['lang'] = $frontLang;
 
                         if ($context['dir'] !== $frontDir = $this->getDirection($frontLang)) {
                             $contentHeader['arguments']['attributes']['dir'] = $frontDir;
+                            $itemTags['arguments']['attributes']['dir'] = $frontDir;
                         }
                     }
 
@@ -106,7 +130,10 @@ final class ContentController
                                 $context,
                                 [
                                     'title' => $title,
-                                    'content' => [$contentHeader],
+                                    'content' => [
+                                        $contentHeader,
+                                        $itemTags,
+                                    ],
                                 ]
                             )
                         )
