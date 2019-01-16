@@ -94,57 +94,21 @@ final class ContentController
                         'template' => '@LiberoPatterns/item-tags.html.twig',
                         'arguments' => [
                             'attributes' => [],
-                            'groups' => [
-                                [
-                                    'title' => ['text' => 'Colours of the rainbow'],
-                                    'list' => [
-                                        'items' => [
-                                            [
-                                                'content' => ['attributes' => ['href' => '#'], 'text' => 'Red'],
-                                            ],
-                                            [
-                                                'content' => ['attributes' => [], 'text' => 'Orange'],
-                                            ],
-                                            [
-                                                'content' => ['attributes' => [], 'text' => 'Yellow'],
-                                            ],
-                                            [
-                                                'content' => ['attributes' => ['href' => '#'], 'text' => 'Green'],
-                                            ],
-                                            [
-                                                'content' => ['attributes' => ['href' => '#'], 'text' => 'Blue'],
-                                            ],
-                                            [
-                                                'content' => ['attributes' => [], 'text' => 'Indigo'],
-                                            ],
-                                            [
-                                                'content' => ['attributes' => [], 'text' => 'Violet'],
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                                [
-                                    'title' => ['text' => 'Points of the compass'],
-                                    'list' => [
-                                        'items' => [
-                                            [
-                                                'content' => ['attributes' => ['href' => '#'], 'text' => 'North'],
-                                            ],
-                                            [
-                                                'content' => ['attributes' => ['href' => '#'], 'text' => 'East'],
-                                            ],
-                                            [
-                                                'content' => ['attributes' => [], 'text' => 'South'],
-                                            ],
-                                            [
-                                                'content' => ['attributes' => [], 'text' => 'West'],
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
+                            'groups' => [],
                         ],
                     ];
+
+                    foreach ($front('libero:item-groups/libero:item-group') as $group) {
+                        $data = [
+                            'title' => ['text' => $group('string(libero:title)')],
+                        ];
+                        foreach ($group('libero:item') as $item) {
+                            $data['list']['items'][] = [
+                                'content' => ['attributes' => [], 'text' => (string) $item],
+                            ];
+                        }
+                        $itemTags['arguments']['groups'][] = $data;
+                    }
 
                     if ($context['lang'] !== $frontLang = $front->getAttribute('xml:lang')) {
                         $contentHeader['arguments']['attributes']['lang'] = $frontLang;

@@ -12,6 +12,11 @@
             <category>Epidemiology and Global Health</category>
         </categories>
 
+        <item-groups>
+            <item-group><title>Colours of the rainbow organism</title><item>Red</item><item>Orange</item><item>Yellow</item><item>Green</item><item>Red</item><item>Blue</item><item>Indigo</item><item>Violet</item></item-group>
+            <item-group><title>Points of the compass</title><item>North</item><item>East</item><item>South</item><item>West</item></item-group>
+        </item-groups>
+
     </front>
 
 </item>
